@@ -1,97 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Priyanshi 💘</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{
-  margin:0;
-  height:100vh;
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  font-family:Arial;
-  overflow:hidden;
-  text-align:center;
-}
-h1{color:#fff;font-size:24px;text-shadow:2px 2px 6px #000;}
-p{color:#fff;}
-button{
-  padding:14px 28px;
-  font-size:18px;
-  border:none;
-  border-radius:30px;
-  margin:10px;
-}
-#yes{background:#ff3366;color:#fff;}
-#no{background:#555;color:#fff;position:absolute;}
-.gift{font-size:60px;animation:bounce 1s infinite;}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-.heart,.confetti{
-  position:absolute;
-  font-size:20px;
-  animation:float 3s linear infinite;
-}
-@keyframes float{
-  0%{transform:translateY(0);opacity:1}
-  100%{transform:translateY(-250px);opacity:0}
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Valentine ❤️</title>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    h1 {
+      color: pink;
+    }
+
+    .choice {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .choice div {
+      text-align: center;
+    }
+
+    .choice img {
+      width: 90px;
+      border-radius: 15px;
+    }
+
+    #yes {
+      background: linear-gradient(45deg, #ff4b7d, #ff1744);
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 0 15px pink;
+    }
+
+    #no {
+      background: #444;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      position: relative;
+    }
+  </style>
 </head>
 
 <body>
 
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+  <h1>Will you be my Valentine? 💖</h1>
 
-<div class="gift">🎁</div>
-<h1>💘 Priyanshi, Will You Be My Valentine? 💘</h1>
-<p>I have surprises for you 😍❤️</p>
+  <div class="choice">
 
-<div>
-<div class="choice">
+    <div>
+      <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+      <br><br>
+      <button id="yes" onclick="yesClick()">YES ❤️</button>
+    </div>
 
-  <div>
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
-    <br><br>
-    <button id="yes" onclick="yesClick()">YES ❤️</button>
+    <div>
+      <img src="https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif">
+      <br><br>
+      <button id="no" onmouseover="moveNo()">NO 😜</button>
+    </div>
+
   </div>
 
-  <div>
-    <img src="https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif">
-    <br><br>
-    <button id="no" onmouseover="moveNo()">NO 😜</button>
-  </div>
+  <script>
+    function yesClick() {
+      window.location.href = "message.html";
+    }
 
-</div>
-</div>
-
-<script>
-function yesClick(){
-  document.getElementById("music").play();
-  for(let i=0;i<30;i++){create("❤️","heart");}
-  for(let i=0;i<30;i++){create("🎉","confetti");}
-  setTimeout(()=>{window.location.href="message.html";},1500);
-}
-function moveNo(){
-  let b=document.getElementById("no");
-  b.style.left=Math.random()*(window.innerWidth-100)+"px";
-  b.style.top=Math.random()*(window.innerHeight-100)+"px";
-}
-function create(emoji,cls){
-  let e=document.createElement("div");
-  e.className=cls;
-  e.innerHTML=emoji;
-  e.style.left=Math.random()*window.innerWidth+"px";
-  e.style.bottom="0px";
-  document.body.appendChild(e);
-  setTimeout(()=>{e.remove();},3000);
-}
-</script>
+    function moveNo() {
+      const btn = document.getElementById("no");
+      btn.style.left = Math.random() * 200 - 100 + "px";
+      btn.style.top = Math.random() * 200 - 100 + "px";
+    }
+  </script>
 
 </body>
 </html>
