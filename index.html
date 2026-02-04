@@ -1,121 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Valentine ❤️</title>
 
 <style>
-  body {
-    background: #0f0f0f;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 30px;
-  }
-
-  h1 {
-    color: pink;
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
-  }
-
-  .box img {
-    width: 70px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-
-  button {
-    padding: 8px 20px;
-    font-size: 15px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-  }
-
-  #yes {
-    background: #ff4b7d;
-    color: white;
-    box-shadow: 0 0 10px pink;
-  }
-
-  #no {
-    background: #555;
-    color: white;
-    position: relative;
-  }
+body{
+  background:#0f0f0f;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding-top:50px;
+}
+h1{
+  color:pink;
+  font-size:24px;
+}
+button{
+  padding:12px 28px;
+  font-size:16px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  margin:15px;
+}
+#yes{
+  background:#ff4b7d;
+  color:white;
+  box-shadow:0 0 12px pink;
+}
+#no{
+  background:#555;
+  color:white;
+}
 </style>
 </head>
 
 <body>
 
-<h1 id="text">Will you be my Valentine? 💖</h1>
+<h1>Will you be my Valentine? 💖</h1>
 
-<div class="container">
-  <div class="box">
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
-    <br>
-    <button id="yes" onclick="yesClick()">YES ❤️</button>
-  </div>
-
-  <div class="box">
-    <img id="gif" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif">
-    <br>
-    <button id="no" onclick="noClick()">NO 😜</button>
-  </div>
-</div>
+<button id="yes" onclick="yesClick()">YES ❤️</button>
+<button id="no" onclick="noClick()">NO 😜</button>
 
 <script>
-  let count = 0;
-
-  const gifs = [
-    "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
-    "https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif",
-    "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif",
-    "https://media.giphy.com/media/l1AsyjZ8XLd1V7pUk/giphy.gif",
-    "https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif",
-    "https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif",
-    "https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif",
-    "https://media.giphy.com/media/5i7umUqAOYYEw/giphy.gif",
-    "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
-    "https://media.giphy.com/media/9Y5BbDSkSTiY8/giphy.gif"
-  ];
-
-  const texts = [
-    "Are you sure? 😿",
-    "I will cry 💔",
-    "Please don't say no 😢",
-    "My heart is breaking 💔",
-    "Think again please 🥺",
-    "I'm really sad 😭",
-    "Why are you doing this 💔",
-    "Last chance 😿",
-    "Still no? 😭",
-    "Okay… I'm crying now 💔"
-  ];
-
-  function noClick() {
-    if (count >= 10) return;
-
-    document.getElementById("gif").src = gifs[count];
-    document.getElementById("text").innerText = texts[count];
-    count++;
-
-    const btn = document.getElementById("no");
-    btn.style.left = Math.random() * 100 - 50 + "px";
-    btn.style.top = Math.random() * 100 - 50 + "px";
-  }
-
-  function yesClick() {
-    window.location.href = "message.html";
-  }
+function yesClick(){
+  window.location.href="message.html";
+}
+function noClick(){
+  window.location.href="no.html";
+}
 </script>
 
 </body>
