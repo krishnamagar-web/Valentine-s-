@@ -1,47 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Priyanshi Memories 📸</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos 💖</title>
 <style>
 body{
   margin:0;
-  background:#fff0f5;
-  font-family:Arial;
+  padding:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#ffc0cb; /* light pink background */
+  font-family:Arial, sans-serif;
+}
+.card{
+  background-color:#ffe4e1; /* slightly lighter pink */
+  width:360px;
+  max-width:95%;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 0 20px #ff69b4;
   text-align:center;
 }
-h2{color:#ff3366;margin:20px;}
-.slider{
-  display:flex;
-  overflow-x:auto;
-  gap:10px;
-  padding:15px;
-  scroll-snap-type:x mandatory;
+h1{
+  font-size:22px;
+  color:#ff1493;
+  margin-bottom:15px;
 }
-.slider img{
-  width:80%;
-  max-width:300px;
-  border-radius:20px;
-  scroll-snap-align:center;
+.photos-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+.photos-container img{
+  width:120px; /* choti photo */
+  border-radius:10px;
 }
 </style>
 </head>
-
 <body>
 
-<h2>📸 Priyanshi's Beautiful Memories ❤️</h2>
+<div class="card">
+<h1>Memorable Photos 💖</h1>
 
-<div class="slider">
-  <img src="IMG_20251227_223138_135.jpg">
-  <img src="IMG_20260121_080505_089.jpg">
-  <img src="IMG-20251123-WA0014.jpg">
-  <img src="IMG_20251013_183111_0561.jpg">
-  <img src="IMG_20251223_224359_055.jpg">
-  <img src="IMG_20260203_080541_825.jpg">
+<div class="photos-container">
+  <img src="photo1.jpg" alt="Photo1">
+  <img src="photo2.jpg" alt="Photo2">
+  <img src="photo3.jpg" alt="Photo3">
+  <img src="photo4.jpg" alt="Photo4">
+  <img src="photo5.jpg" alt="Photo5">
+  <img src="photo6.jpg" alt="Photo6">
+  <img src="photo7.jpg" alt="Photo7">
+  <img src="photo8.jpg" alt="Photo8">
 </div>
 
-<p>💖 Always Special 💖</p>
+</div>
 
 </body>
 </html>
