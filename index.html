@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Priyanshi 💘</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial;
+  overflow:hidden;
+  text-align:center;
+}
+h1{color:#fff;font-size:24px;text-shadow:2px 2px 6px #000;}
+p{color:#fff;}
+button{
+  padding:14px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  margin:10px;
+}
+#yes{background:#ff3366;color:#fff;}
+#no{background:#555;color:#fff;position:absolute;}
+.gift{font-size:60px;animation:bounce 1s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.heart,.confetti{
+  position:absolute;
+  font-size:20px;
+  animation:float 3s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0);opacity:1}
+  100%{transform:translateY(-250px);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="gift">🎁</div>
+<h1>💘 Priyanshi, Will You Be My Valentine? 💘</h1>
+<p>I have surprises for you 😍❤️</p>
+
+<div>
+  <button id="yes" onclick="yesClick()">YES 💖</button>
+  <button id="no" onmouseover="moveNo()">NO 😜</button>
+</div>
+
+<script>
+function yesClick(){
+  document.getElementById("music").play();
+  for(let i=0;i<30;i++){create("❤️","heart");}
+  for(let i=0;i<30;i++){create("🎉","confetti");}
+  setTimeout(()=>{window.location.href="message.html";},1500);
+}
+function moveNo(){
+  let b=document.getElementById("no");
+  b.style.left=Math.random()*(window.innerWidth-100)+"px";
+  b.style.top=Math.random()*(window.innerHeight-100)+"px";
+}
+function create(emoji,cls){
+  let e=document.createElement("div");
+  e.className=cls;
+  e.innerHTML=emoji;
+  e.style.left=Math.random()*window.innerWidth+"px";
+  e.style.bottom="0px";
+  document.body.appendChild(e);
+  setTimeout(()=>{e.remove();},3000);
+}
+</script>
+
+</body>
+</html>
