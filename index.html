@@ -1,54 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Valentine ❤️</title>
 
 <style>
-body{
-  background:#0f0f0f;
-  color:white;
-  font-family:Arial;
-  text-align:center;
-  padding-top:50px;
-}
-h1{
-  color:pink;
-  font-size:24px;
-}
-button{
-  padding:12px 28px;
-  font-size:16px;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-  margin:15px;
-}
-#yes{
-  background:#ff4b7d;
-  color:white;
-  box-shadow:0 0 12px pink;
-}
-#no{
-  background:#555;
-  color:white;
-}
+  body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#ffc0cb; /* light pink */
+    font-family:Arial, sans-serif;
+  }
+
+  .card{
+    background-color:#ffe4e1; /* thoda lighter pink */
+    width:320px;
+    max-width:90%;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 0 20px #ff69b4;
+    text-align:center;
+  }
+
+  h1{
+    font-size:22px;
+    color:#ff1493;
+    margin-bottom:15px;
+  }
+
+  img{
+    width:250px;
+    border-radius:15px;
+    margin-bottom:15px;
+  }
+
+  button{
+    padding:10px 22px;
+    font-size:15px;
+    border:none;
+    border-radius:25px;
+    margin:10px;
+    cursor:pointer;
+  }
+
+  #yes{
+    background:#ff69b4;
+    color:white;
+  }
+
+  #no{
+    background:#ff1493;
+    color:white;
+    position:relative;
+  }
+
+  #goback{
+    background:#ff4b7d;
+    color:white;
+    display:none;
+  }
 </style>
 </head>
 
 <body>
 
-<h1>Will you be my Valentine? 💖</h1>
+<div class="card">
+  <h1 id="text">Will you be my Valentine? 💖</h1>
 
-<button id="yes" onclick="yesClick()">YES ❤️</button>
-<button id="no" onclick="noClick()">NO 😜</button>
+  <img id="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Valentine Gif">
+
+  <div>
+    <button id="yes" onclick="yesClick()">YES ❤️</button>
+    <button id="no" onclick="noClick()">NO 😜</button>
+    <button id="goback" onclick="goBack()">Go Back 💖</button>
+  </div>
+</div>
 
 <script>
+let noCount = 0;
+
+const gifs=[
+  "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+  "https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif",
+  "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif",
+  "https://media.giphy.com/media/l1AsyjZ8XLd1V7pUk/giphy.gif",
+  "https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif",
+  "https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif",
+  "https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif",
+  "https://media.giphy.com/media/5i7umUqAOYYEw/giphy.gif",
+  "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+  "https://media.giphy.com/media/9Y5BbDSkSTiY8/giphy.gif"
+];
+
+const texts=[
+  "Are you sure? 😿",
+  "I will cry 💔",
+  "Please don't say no 😢",
+  "My heart is breaking 💔",
+  "Think again please 🥺",
+  "I'm really sad 😭",
+  "Why are you doing this 💔",
+  "Last chance 😿",
+  "Still no? 😭",
+  "Okay… I'm crying now 💔"
+];
+
 function yesClick(){
-  window.location.href="message.html";
+  alert("Yay! You clicked YES ❤️"); // Abhi test ke liye, baad me message.html redirect karenge
 }
+
 function noClick(){
-  window.location.href="no.html";
+  if(noCount<10){
+    document.getElementById("gif").src=gifs[noCount];
+    document.getElementById("text").innerText=texts[noCount];
+    noCount++;
+
+    // thoda button move
+    const btn=document.getElementById("no");
+    btn.style.left=Math.random()*80-40+"px";
+    btn.style.top=Math.random()*40-20+"px";
+  }
+
+  if(noCount>=10){
+    // show Go Back button aur hide NO
+    document.getElementById("no").style.display="none";
+    document.getElementById("goback").style.display="inline-block";
+  }
+}
+
+function goBack(){
+  noCount=0;
+  document.getElementById("no").style.display="inline-block";
+  document.getElementById("goback").style.display="none";
+  document.getElementById("gif").src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif";
+  document.getElementById("text").innerText="Will you be my Valentine? 💖";
+  document.getElementById("no").style.left="0px";
+  document.getElementById("no").style.top="0px";
 }
 </script>
 
