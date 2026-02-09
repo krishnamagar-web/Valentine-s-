@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.question {
+  font-size: 20px;
+  margin: 20px;
+}
+
+.buttons button {
+  padding: 12px 25px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.yes {
+  background: red;
+  color: white;
+}
+
+.no {
+  background: darkred;
+  color: white;
+}
+
+img {
+  width: 150px;
+  margin-top: 20px;
+}
