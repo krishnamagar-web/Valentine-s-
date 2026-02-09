@@ -1,49 +1,70 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  height: 100vh;
   background: pink;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
-.container {
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 350px;
+  padding: 25px;
   text-align: center;
-}
-
-h1 {
-  font-size: 32px;
+  border-radius: 20px;
 }
 
 h2 {
-  font-size: 28px;
+  color: #b30059;
+  margin-bottom: 5px;
 }
 
-.question {
-  font-size: 20px;
-  margin: 20px;
+h1 {
+  color: #800040;
+  margin-top: 0;
 }
 
-.buttons button {
-  padding: 12px 25px;
+#question {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+#gif {
+  width: 150px;
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+button {
+  padding: 15px 25px;
   font-size: 18px;
-  margin: 10px;
   border: none;
   cursor: pointer;
 }
 
-.yes {
+#yesBtn {
   background: red;
   color: white;
 }
 
-.no {
-  background: darkred;
-  color: white;
+#noBtn {
+  background: white;
+  color: black;
+  border: 2px solid red;
 }
 
-img {
-  width: 150px;
+.back-btn {
   margin-top: 20px;
+  background: black;
+  color: white;
+  padding: 10px 20px;
 }
