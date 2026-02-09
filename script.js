@@ -26,16 +26,27 @@ function yesClick() {
     <h3>❤️ For You ❤️</h3>
     <p>
     Ye hamara pehla valentine hai long distance wala,
-    lekin agla wala saath me hoga 🤭<br><br>
+    but agle wale valentine me ham saath hoge 🫂<br><br>
 
-    Mujhe tumse kuch nahi chahiye
-    kyunki mera sabse best gift tum ho 🫂🫀<br><br>
+    Main tumhare liye gift launga,
+    badle me mujhe tumse kuch nahi chahiye,
+    kyunki mera gift to tum hi ho 🤭<br><br>
 
-    Tum mujhe pasand ho,
-    kyu pasand ho ye mat pucho,
-    bas pasand ho ❤️<br><br>
+    Lekin samajh nahi aata tumhare liye
+    kya gift laun,
+    tum itni khaas ho mere liye
+    jisko main na shabdon me,
+    matlab duniya me aisi koi language hi nahi hai
+    jisse main proof kar paun
+    tum mere liye kitni khaas ho 🫂🫀<br><br>
 
-    Happy Valentine's Day Priyanshi 😚
+    Vo kehte hain na —
+    tum mujhe pasand ho,
+    kyun pasand ho ye mat pucho,
+    bas pasand ho samjhi ❤️<br><br>
+
+    And Happy Valentine's Day
+    <b>Priyanshi</b> 😚
     </p>
 
     <button onclick="showPhotos()">Next ➡️</button>
